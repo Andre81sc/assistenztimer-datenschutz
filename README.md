@@ -1,6 +1,6 @@
 # Datenschutzerklärung für AssistenzTimer
 
-Stand: 8. Juni 2026
+Stand: 16. August 2026
 
 ## 1. Verantwortlicher
 
@@ -20,6 +20,7 @@ Die App speichert keine personenbezogenen Daten auf Servern des Entwicklers. All
 ### Lokal auf dem Gerät
 
 - Die WebDAV-Serveradresse, der Benutzername und das Passwort. Das Passwort wird verschlüsselt im iOS-Schlüsselbund abgelegt (`kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`) und nicht in iCloud-Backups synchronisiert.
+- Optional je Assistenzkraft eine gespeicherte Unterschrift als Bild. Sie wird ausschließlich verschlüsselt im iOS-Schlüsselbund des Geräts abgelegt (`kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly`), nicht über iCloud synchronisiert und nicht auf andere Geräte übertragen; auch in den JSON-Sicherungen auf dem WebDAV-Server ist sie nicht enthalten. Die Unterschrift kann in der Kontaktkarte jederzeit neu erfasst oder gelöscht werden; beim Löschen der Assistenzkraft wird sie automatisch mit entfernt.
 - Die Liste der angelegten Assistenzkräfte (Vornamen, Telefonnummern, E-Mail-Adressen, Stundenlohn-Angaben und Kontaktkarten-Details, soweit vom Nutzer eingetragen).
 - Daten zum Arbeitgeber (Name und Adresse, die im Kopf der erstellten PDF-Dokumente erscheinen).
 - Erfasste Schichten: Ankunfts- und Abreisezeiten, Pausen, freitextliche Tätigkeitsbeschreibungen.
@@ -30,7 +31,7 @@ Diese Daten werden ausschließlich lokal auf dem Gerät gespeichert. Sie werden 
 
 ### Auf dem WebDAV-Server des Nutzers
 
-- Die erzeugten Tätigkeitsnachweise und Kostenabrechnungen als PDF — eingegliedert in eine Ordnerstruktur pro Assistenzkraft und Monat.
+- Die erzeugten Tätigkeitsnachweise und Kostenabrechnungen als PDF — eingegliedert in eine Ordnerstruktur pro Assistenzkraft und Monat. Liegt für eine Assistenzkraft eine gespeicherte Unterschrift vor oder wurde ein Nachweis direkt in der App unterschrieben, enthält das abgelegte PDF diese Unterschrift als Bild.
 - Optionale JSON-Sicherungspakete, die die App regelmäßig nach Änderungen anlegt (Mitarbeiterliste, Zeit-Einträge, Mitarbeiter-Einstellungen, Kontaktkarten). Es werden bis zu 20 Sicherungen rotierend behalten.
 - Kurze TXT-Notizen, mit denen Beanstandungen aus der Begleit-App „AT Postfach" als erledigt markiert werden.
 
