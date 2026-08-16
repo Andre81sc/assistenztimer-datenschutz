@@ -32,7 +32,7 @@ Diese Daten werden ausschließlich lokal auf dem Gerät gespeichert. Sie werden 
 ### Auf dem WebDAV-Server des Nutzers
 
 - Die erzeugten Tätigkeitsnachweise und Kostenabrechnungen als PDF — eingegliedert in eine Ordnerstruktur pro Assistenzkraft und Monat. Liegt für eine Assistenzkraft eine gespeicherte Unterschrift vor oder wurde ein Nachweis direkt in der App unterschrieben, enthält das abgelegte PDF diese Unterschrift als Bild.
-- Optionale JSON-Sicherungspakete, die die App regelmäßig nach Änderungen anlegt (Mitarbeiterliste, Zeit-Einträge, Mitarbeiter-Einstellungen, Kontaktkarten). Es werden bis zu 20 Sicherungen rotierend behalten.
+- Optionale JSON-Sicherungspakete, die die App regelmäßig nach Änderungen anlegt (Mitarbeiterliste, Zeit-Einträge, Mitarbeiter-Einstellungen, Kontaktkarten). Es wird eine begrenzte Anzahl von Sicherungen rotierend behalten; ist die Grenze erreicht, wird die jeweils älteste automatisch überschrieben.
 - Kurze TXT-Notizen, mit denen Beanstandungen aus der Begleit-App „AT Postfach" als erledigt markiert werden.
 
 Die App stellt keine Verbindung zu Servern des Entwicklers oder zu Drittanbietern her, sondern ausschließlich zu Apple-System-Diensten und zum vom Nutzer konfigurierten WebDAV-Server.
