@@ -72,3 +72,7 @@ Da der Entwickler keine personenbezogenen Daten verarbeitet, sind Auskunfts-, L�
 ## 9. Kontakt
 
 Bei Fragen zur Datenschutzerklärung oder zur App selbst: andre.schmidt.be@icloud.com
+
+## Support
+
+Fragen, Probleme oder Anregungen zur App AssistenzTimer? Schreib einfach eine E-Mail an **andre.schmidt.be@icloud.com** — du bekommst so schnell wie möglich eine Antwort, in der Regel innerhalb weniger Tage.
