@@ -1,19 +1,19 @@
 # Datenschutzerklärung für AssistenzTimer
 
-Stand: 16. August 2026
+Stand: November 2026
 
 ## 1. Verantwortlicher
 
 Andre Schmidt
 Potsdamer Straße 3
 59192 Bergkamen
-E-Mail: andre.schmidt.be@icloud.com
+E-Mail: entwickler@sternenwald.eu
 
 ## 2. Allgemeines
 
-AssistenzTimer (im Folgenden „die App") ist eine iOS-Anwendung für Menschen, die ihre persönlichen Assistenzkräfte selbst beschäftigen (zum Beispiel im Rahmen eines Persönlichen Budgets). Mit der App werden Arbeitszeiten, Pausen und Tätigkeiten der Assistenzkräfte erfasst, daraus monatliche Tätigkeitsnachweise und Kostenabrechnungen als PDF erstellt und auf einem vom Nutzer selbst konfigurierten WebDAV-Server abgelegt.
+AssistenzTimer (im Folgenden „die App") ist eine iOS-Anwendung für Menschen, die ihre persönlichen Assistenzkräfte selbst beschäftigen (zum Beispiel im Rahmen eines Persönlichen Budgets). Mit der App werden Arbeitszeiten, Pausen und Tätigkeiten der Assistenzkräfte erfasst, daraus monatliche Tätigkeitsnachweise und Kostenabrechnungen als PDF erstellt und wahlweise in der Dateien-App (Standard) oder auf einem vom Nutzer selbst konfigurierten WebDAV-Server abgelegt.
 
-Die App speichert keine personenbezogenen Daten auf Servern des Entwicklers. Alle Daten werden ausschließlich lokal auf dem Gerät des Nutzers und auf dem vom Nutzer konfigurierten WebDAV-Server abgelegt. Welcher Server das ist (beispielsweise eine eigene Synology- oder QNAP-NAS, eine Nextcloud-Instanz, ein Cloud-Anbieter mit WebDAV-Endpunkt wie Strato HiDrive, Magenta Cloud oder mailbox.org), entscheidet ausschließlich der Nutzer. Wahl und Betrieb dieses Servers liegen vollständig in seiner Verantwortung.
+Die App speichert keine personenbezogenen Daten auf Servern des Entwicklers. Alle Daten werden ausschließlich lokal auf dem Gerät des Nutzers, in dem in der Dateien-App gewählten Ordner oder auf dem vom Nutzer konfigurierten WebDAV-Server abgelegt. Welcher Server das ist (beispielsweise eine eigene Synology- oder QNAP-NAS, eine Nextcloud-Instanz, ein Cloud-Anbieter mit WebDAV-Endpunkt wie Strato HiDrive, Magenta Cloud oder mailbox.org), entscheidet ausschließlich der Nutzer. Wahl und Betrieb dieses Servers liegen vollständig in seiner Verantwortung.
 
 ## 3. Verarbeitete Daten
 
@@ -29,13 +29,19 @@ Die App speichert keine personenbezogenen Daten auf Servern des Entwicklers. All
 
 Diese Daten werden ausschließlich lokal auf dem Gerät gespeichert. Sie werden weder an den Entwickler noch an Dritte übermittelt.
 
-### Auf dem WebDAV-Server des Nutzers
+### In der Dateien-App (Standard-Speicherort)
+
+- Ohne weitere Einrichtung legt die App die erzeugten PDF-Dokumente im eigenen App-Ordner ab, der in der Dateien-App unter „Auf meinem iPhone“ → „AssistenzTimer“ sichtbar ist, sortiert nach Assistenzkraft, Art und Jahr.
+- Alternativ kann der Nutzer in den Einstellungen einen eigenen Ordner in der Dateien-App wählen. Liegt dieser Ordner bei einem Cloud-Anbieter (zum Beispiel iCloud Drive), gelten für die dort abgelegten Dateien die Bestimmungen dieses Anbieters. Die App merkt sich nur die Zugriffsberechtigung auf den gewählten Ordner.
+- Ist der gewählte Ordner vorübergehend nicht erreichbar, wird das PDF auf dem Gerät vorgemerkt und automatisch nachgeschickt, sobald der Ordner wieder verfügbar ist.
+
+### Auf dem WebDAV-Server des Nutzers (optional)
 
 - Die erzeugten Tätigkeitsnachweise und Kostenabrechnungen als PDF — eingegliedert in eine Ordnerstruktur pro Assistenzkraft und Monat. Liegt für eine Assistenzkraft eine gespeicherte Unterschrift vor oder wurde ein Nachweis direkt in der App unterschrieben, enthält das abgelegte PDF diese Unterschrift als Bild.
 - Optionale JSON-Sicherungspakete, die die App regelmäßig nach Änderungen anlegt (Mitarbeiterliste, Zeit-Einträge, Mitarbeiter-Einstellungen, Kontaktkarten). Es wird eine begrenzte Anzahl von Sicherungen rotierend behalten; ist die Grenze erreicht, wird die jeweils älteste automatisch überschrieben.
 - Kurze TXT-Notizen, mit denen Beanstandungen aus der Begleit-App „AT Postfach" als erledigt markiert werden.
 
-Die App stellt keine Verbindung zu Servern des Entwicklers oder zu Drittanbietern her, sondern ausschließlich zu Apple-System-Diensten und zum vom Nutzer konfigurierten WebDAV-Server.
+Die App stellt keine Verbindung zu Servern des Entwicklers oder zu Drittanbietern her, sondern ausschließlich zu Apple-System-Diensten und zum vom Nutzer konfigurierten WebDAV-Server. Der Link „Datenschutzerklärung“ in der App öffnet lediglich diese Seite im Browser.
 
 ## 4. Verarbeitung durch Apple-Systeme
 
@@ -44,6 +50,8 @@ Die App nutzt einige in iOS eingebaute Systemdienste, die ihrerseits den Apple-D
 **Apple Foundation Models / Apple Intelligence:** Auf Geräten mit Apple Intelligence kann die App die eingegebene Tätigkeitsbeschreibung zu kompakten Stichworten zusammenfassen. Die Verarbeitung erfolgt vollständig auf dem Gerät. Es findet kein Aufruf an Apple-Server statt; der Text der Tätigkeitsbeschreibung verlässt das Gerät nicht.
 
 **Sprachausgabe (AVSpeechSynthesizer):** Optionale Sprachansagen (Ankunft/Abreise, Beanstandungs-Hinweise) werden lokal vom iOS-System-Sprachsynthesizer erzeugt. Es erfolgt kein Aufruf an Apple- oder Drittserver.
+
+**Siri und Kurzbefehle (App Intents):** Die App bietet Kurzbefehle an, etwa „Ankunft speichern für … in AssistenzTimer“. Wer sie per Siri, Action Button oder Kurzbefehle-App nutzt, dessen Spracheingabe verarbeitet Apple nach den Siri-Bestimmungen. Die App erhält davon nur den erkannten Befehl (zum Beispiel, für welche Assistenzkraft eine Zeit gespeichert werden soll) und speichert ihn wie eine Eingabe in der App. An den Entwickler wird nichts übermittelt.
 
 **System-Diktat (Tastatur):** Wenn der Nutzer die Mikrofon-Taste der iOS-Tastatur verwendet, läuft die Spracherkennung — abhängig von Modell und iOS-Einstellungen — auf modernen iPhones lokal auf dem Gerät. Welcher Modus aktiv ist, regelt iOS in den System-Einstellungen.
 
@@ -71,8 +79,8 @@ Da der Entwickler keine personenbezogenen Daten verarbeitet, sind Auskunfts-, L�
 
 ## 9. Kontakt
 
-Bei Fragen zur Datenschutzerklärung oder zur App selbst: andre.schmidt.be@icloud.com
+Bei Fragen zur Datenschutzerklärung oder zur App selbst: entwickler@sternenwald.eu
 
 ## Support
 
-Fragen, Probleme oder Anregungen zur App AssistenzTimer? Schreib einfach eine E-Mail an **andre.schmidt.be@icloud.com** — du bekommst so schnell wie möglich eine Antwort, in der Regel innerhalb weniger Tage.
+Fragen, Probleme oder Anregungen zur App AssistenzTimer? Schreib einfach eine E-Mail an **entwickler@sternenwald.eu** — du bekommst so schnell wie möglich eine Antwort, in der Regel innerhalb weniger Tage.
